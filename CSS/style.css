@@ -20,24 +20,23 @@ body {
 
     border-radius: 15px;
 
-    height: 80%;
-    width: 50%;
-    max-width: 460px;
-    max-height: 700px;
+    height: 100%;
+    width: 100%;
 
     
 }
 
 .display {
-    height: 20%;
-    padding-right: 20px;
+    height: 120px;
+    width: 450px;
+    margin: auto;
     text-align: right;
-
-    //background-color: teal;
+    //background-color: indianred;
 }
 
 .secondary-display {
     padding-top: 15px;
+    //padding-right: 35px;
     font-size: 22px;
     font-weight: 549;
 }
@@ -45,12 +44,13 @@ body {
 .primary-display {
     font-size: 50px;
     line-height: 10%;
-    
+    //padding-right: 35px;
 }
 
 .input {
-    height: 70%;
-    width: 90%;
+    height: 600px;
+    width: 450px;
+
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -61,18 +61,18 @@ body {
 .row {
     display: flex;
     justify-content: space-between;
-    
+    height: 100px;
     padding-top: 5%;
 
 }
 
 .btn {
-    font-size: 24px;
+    font-size: 40px;
     color: white;
     border: transparent;
     border-radius: 300px;
-    height: 80px;
-    width: 80px;
+    height: 90%;
+    width: 20%;
 }
 
 #add,
