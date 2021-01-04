@@ -73,34 +73,21 @@ body {
     border-radius: 300px;
     height: 90%;
     width: 20%;
+    outline: none;
 }
 
-#add,
-#subtract,
-#multiply,
-#divide,
-#equal {
+.operation {
     background-color: #fe9505;
 }
 
-#clear,
-#negative,
-#percent {
+.utility {
     background-color: #a5a5a5;
+    color: black;
 }
 
-#one,
-#two,
-#three,
-#four,
-#five,
-#six,
-#seven,
-#eight,
-#nine,
-#zero,
-#decimal {
+.num {
     background-color: #333333;
+    
 }
 
 #zero {
@@ -108,3 +95,36 @@ body {
     text-align: left;
     padding-left: 35px;
 }
+
+@keyframes numFlash {
+ 0% {background-color: #777777;}
+ 100% {background-color: #333333;}
+}
+
+.flash.num{
+    animation-name: numFlash;
+    animation-fill-mode: forwards;
+    animation-duration: 1000ms;
+} 
+
+@keyframes utilityFlash {
+ 0% {background-color: #dadada;}
+ 100% {background-color: #a5a5a5;}
+}
+
+.flash.utility{
+    animation-name: utilityFlash;
+    animation-fill-mode: forwards;
+    animation-duration: 1000ms;
+} 
+
+@keyframes equalFlash {
+    0% {background-color:  #ffd69d;}
+    100% {background-color: #fe9505;}
+   }
+   
+   .flash#equal{
+       animation-name: equalFlash;
+       animation-fill-mode: forwards;
+       animation-duration: 1000ms;
+   } 

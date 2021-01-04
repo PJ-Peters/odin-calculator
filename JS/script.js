@@ -14,6 +14,7 @@ let secondaryDisplay = document.querySelector('.secondary-display');
 
 //DOM Event Listeners
 buttons.forEach(buttons => buttons.addEventListener('click', routeInput));
+buttons.forEach(buttons => buttons.addEventListener('click', btnAnimation));
 
 //Parse input and run proper function
 function routeInput(event) {
@@ -58,12 +59,21 @@ function routeInput(event) {
             percent();
             break;
         case '.':
+            if (currentValue === 'first') {
+                if (firstValue.includes('.')){
+                    break;
+                }
+            } else if (currentValue === 'second') {
+                if (secondValue.includes('.')){
+                    break;
+                }
+            }
             numberInput('.')
             break;
             default:
                 break;
     }
-    if (firstValue.length >= 1) {
+    if (firstValue.length >= 1 && firstValue !== '.' && secondValue !== '.' && currentOperation === '') {
         switch (event.target.defaultValue) {
             case '÷':
                 currentOperation = '÷'
@@ -89,8 +99,16 @@ function routeInput(event) {
                 document.querySelector('#add').style.backgroundColor = "white";
                 document.querySelector('#add').style.color = "#fe9505";
                 break;
+            default:
+                break;
+        }
+    }
+    if (firstValue.length >= 1 && firstValue !== '.' && secondValue !== '.') {
+        switch (event.target.defaultValue) {
             case '=':
+                if (firstValue !== '' && secondValue !== '') {
                 compute(currentOperation, firstValue, secondValue);
+                };
                 break;
             default:
                 break;
@@ -194,4 +212,13 @@ function percent() {
         secondValue /= 100;
         primaryDisplay.textContent = secondValue;
     }
+}
+
+//Animation function
+function btnAnimation(event) {
+    buttons.forEach(button => button.classList.remove('flash')) ;
+    let classObj = event.target.classList;
+    setTimeout(() => {
+        event.target.classList.add('flash') 
+    },1);
 }
